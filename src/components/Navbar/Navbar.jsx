@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import "./Navbar.css";
 import { GiShoppingCart } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import { AppContext } from "../Context/AppProvider";
 
-function Navbar({addedToCart}) {
+
+function Navbar() {
+  const {addedToCart} = useContext(AppContext);
 
   return (
     <nav>

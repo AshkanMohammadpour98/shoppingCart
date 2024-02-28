@@ -5,7 +5,7 @@ import productsDb from '../../db'
 import { useState } from 'react';
 import ProductItem from '../ProductItem/ProductItem';
 
-function ProductsLitst({addedToCart , setAddedToCart , addedProduct , setAddedProduct}){
+function ProductsLitst(){
     
     const [productsData , setProductsData] = useState(productsDb);
     
@@ -15,7 +15,7 @@ function ProductsLitst({addedToCart , setAddedToCart , addedProduct , setAddedPr
                 {
                     
                     productsData.map( product => (
-                        <Col sm={6} md={4} lg={3} key={product.id}><ProductItem {...product} addedToCart={addedToCart} setAddedToCart={setAddedToCart} addedProduct={addedProduct} setAddedProduct={setAddedProduct}/></Col>
+                        <Col sm={6} md={4} lg={3} key={product.id}><ProductItem {...product} /></Col>
                     ))
                 }
             </Row>

@@ -1,19 +1,11 @@
+import { useContext } from "react";
 import "./Cartitem.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { AppContext } from "../Context/AppProvider";
 
-function CartItem({
-  addedProduct,
-  setAddedProduct,
-  addedToCart,
-  setAddedToCart,
-  id,
-  name,
-  image,
-  price,
-  count,
-  totalPrice,
-}) {
-  // console.log(addedProduct);
+function CartItem({id  ,totalPrice, count , image }) {
+  const {addedToCart , setAddedToCart , addedProduct , setAddedProduct} = useContext(AppContext)
+  
 
   const incresehandler = () => {
     const updateAddedProduct = [...addedProduct];

@@ -1,7 +1,10 @@
 import './ProductItem.css';
 import productsDb from '../../db';
+import { useContext } from 'react';
+import { AppContext } from '../Context/AppProvider';
 
-function ProductItem ({id , name , price , image , addedToCart , setAddedToCart , addedProduct , setAddedProduct}){
+function ProductItem ({id , name , price , image }){
+    const {addedToCart , setAddedToCart , addedProduct , setAddedProduct} = useContext(AppContext)
 
     const addToCartHandler = ()=>{
         if (isProductExistInCart()) {

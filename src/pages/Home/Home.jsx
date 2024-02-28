@@ -3,17 +3,14 @@ import Navbar from "../../components/Navbar/Navbar";
 import ProductsLitst from "../../components/productsLitst/ProductsList";
 import "./Home.css";
 
-function Home({ addedToCart, setAddedToCart, addedProduct, setAddedProduct }) {
+
+function Home() {
+
   return (
     <>
-      <Navbar addedToCart={addedToCart} />
+      <Navbar />
       <h1>Home page</h1>
-      <ProductsLitst
-        addedToCart={addedToCart}
-        setAddedToCart={setAddedToCart}
-        addedProduct={addedProduct}
-        setAddedProduct={setAddedProduct}
-      />
+      <ProductsLitst/>
       <Footer />
     </>
   );

@@ -2,17 +2,12 @@ import Cart from "../../components/Cart/Cart";
 import Navbar from "../../components/Navbar/Navbar";
 import "./CartsPage.css";
 
-function Card({ addedToCart, setAddedToCart, addedProduct, setAddedProduct }) {
+function Card() {
   return (
     <>
-      <Navbar addedToCart={addedToCart} />
+      <Navbar/>
       <h1>Card page</h1>
-      <Cart
-        addedToCart={addedToCart}
-        setAddedToCart={setAddedToCart}
-        addedProduct={addedProduct}
-        setAddedProduct={setAddedProduct}
-      />
+      <Cart/>
       
     </>
   );
