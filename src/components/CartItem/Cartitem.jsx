@@ -3,36 +3,22 @@ import "./Cartitem.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { AppContext } from "../Context/AppProvider";
 
-function CartItem({id  ,totalPrice, count , image }) {
-  const {addedToCart , setAddedToCart , addedProduct , setAddedProduct} = useContext(AppContext)
-  
+
+function CartItem( {id  ,totalPrice, count , image } ) {
+  const {dispatch} = useContext(AppContext);
+
 
   const incresehandler = () => {
-    const updateAddedProduct = [...addedProduct];
 
-    updateAddedProduct.map((product) => {
-      if (product.id === id) {
-        product.count += 1;
-        product.totalPrice = product.price * product.count;
-        setAddedProduct(updateAddedProduct);
-      }
-    });
+        dispatch({type : 'INCRESE_IN_CART' , id})
   };
   const decresehandler = () => {
-    const updateAddedProduct = [...addedProduct];
 
-    updateAddedProduct.map((product) => {
-      if (product.id === id) {
-        product.count -= 1;
-        product.totalPrice = product.price * product.count;
-        setAddedProduct(updateAddedProduct);
-      }
-    });
+
+    dispatch({type : 'DECRESE_IN_CART' , id})
   };
   const removeProductHandler = ()=>{
-    const updateAddedProduct = addedProduct.filter( product => product.id !== id)
-    setAddedProduct(updateAddedProduct)
-    setAddedToCart(addedToCart -1)   
+    dispatch({type : 'REMOVE_IN_CART' , id})
   }
 
   return (

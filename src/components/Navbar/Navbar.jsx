@@ -6,7 +6,8 @@ import { AppContext } from "../Context/AppProvider";
 
 
 function Navbar() {
-  const {addedToCart} = useContext(AppContext);
+  const {addedToCart} = useContext(AppContext).state ;
+ 
 
   return (
     <nav>
