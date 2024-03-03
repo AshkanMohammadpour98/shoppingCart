@@ -1,15 +1,14 @@
-import { useContext } from "react";
 import CartItem from "../CartItem/Cartitem";
 import "./Cart.css";
-import { AppContext } from "../Context/AppProvider";
+import { useSelector } from "react-redux";
 
 function Cart() {
-  const { state} = useContext(AppContext);
-  const {addedToCart ,addedProduct} = state;
+
+  const addedProduct = useSelector(store => store.addedProduct)
 
   return (
     <div className="containerCart">
-      {addedToCart > 0 ? (
+      {addedProduct.length > 0 ? (
         <>
           {addedProduct.map((product) => (
             <CartItem key={product.id} {...product} />

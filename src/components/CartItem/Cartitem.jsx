@@ -1,11 +1,13 @@
-import { useContext } from "react";
+
 import "./Cartitem.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { AppContext } from "../Context/AppProvider";
+
+import { useDispatch } from "react-redux";
 
 
 function CartItem( {id  ,totalPrice, count , image } ) {
-  const {dispatch} = useContext(AppContext);
+ 
+  const dispatch = useDispatch();
 
 
   const incresehandler = () => {

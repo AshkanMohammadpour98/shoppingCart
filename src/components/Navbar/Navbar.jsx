@@ -1,13 +1,13 @@
-import { useContext } from "react";
 import "./Navbar.css";
 import { GiShoppingCart } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import { AppContext } from "../Context/AppProvider";
+import { useSelector } from "react-redux";
 
 
 function Navbar() {
-  const {addedToCart} = useContext(AppContext).state ;
- 
+
+  const addedToCart = useSelector( store => store.addedToCart)
+
 
   return (
     <nav>

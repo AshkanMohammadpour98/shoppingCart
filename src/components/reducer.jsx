@@ -33,10 +33,9 @@
             });
       
             return newState;
-          }T
+          }
           case "REMOVE_IN_CART": {
-          //   console.log(action);
-          //   console.log(state.addedProduct);
+    
             const newState = {...state};
             const updateNewState = newState.addedProduct.filter((product) => (
               product.id !== action.id
