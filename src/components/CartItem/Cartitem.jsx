@@ -3,6 +3,8 @@ import "./Cartitem.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 import { useDispatch } from "react-redux";
+import { decreseInCart, increseInCart, removeInCart } from "../../Redux/slice";
+
 
 
 function CartItem( {id  ,totalPrice, count , image } ) {
@@ -12,15 +14,15 @@ function CartItem( {id  ,totalPrice, count , image } ) {
 
   const incresehandler = () => {
 
-        dispatch({type : 'INCRESE_IN_CART' , id})
+        dispatch(increseInCart(id))
   };
   const decresehandler = () => {
 
 
-    dispatch({type : 'DECRESE_IN_CART' , id})
+    dispatch(decreseInCart(id))
   };
   const removeProductHandler = ()=>{
-    dispatch({type : 'REMOVE_IN_CART' , id})
+    dispatch(removeInCart(id))
   }
 
   return (

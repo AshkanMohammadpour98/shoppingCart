@@ -1,5 +1,6 @@
 import './ProductItem.css';
 import { useDispatch } from 'react-redux';
+import { addToCart } from '../../Redux/slice';
 
 
 function ProductItem (data){
@@ -11,7 +12,7 @@ function ProductItem (data){
 
     const addToCartHandler = ()=>{
 
-        dispatch({type : "ADD_TO_CART" , data})
+        dispatch(addToCart(data)) 
 
     }
     
