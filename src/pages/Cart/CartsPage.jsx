@@ -6,7 +6,6 @@ function Card() {
   return (
     <>
       <Navbar/>
-      <h1>Card page</h1>
       <Cart/>
       
     </>

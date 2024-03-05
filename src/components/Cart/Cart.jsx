@@ -16,7 +16,7 @@ function Cart() {
          
         </>
       ) : (
-        <p>empte added to cart</p>
+        <p>The shopping cart is empty</p>
       )}
     </div>
   );
